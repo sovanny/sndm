@@ -1,0 +1,83 @@
+#feed-background{
+    /*background-image:  url("/static/img/journey.jpg");*/
+    background-color: gray;
+}
+.feed-left-col{
+    background-color: lightgrey;
+
+}
+.feed-middle-col{
+    background-color: lightslategray;
+    
+}
+.user-info-container{
+    width: 250px;
+    
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    
+}
+.user-picture{
+    width: 100px;
+    display: block;
+    margin: 25px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.user-info-box{
+    background-color: white;
+    height: 300px;
+    display: block;
+}
+.game-item{
+    width: 650px;
+    height: 200px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    background-color: white;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.75);
+    
+}
+
+.game-img-container{
+    display: block;
+    float: left;
+    width: 150px;
+    
+}
+
+.game-info-container{
+    display: block;
+    float: left;
+    width: 400px;
+}
+
+.game-score-container{
+    display: block;
+    float: left;
+    width: 100px;
+}
+
+.game-img{
+    width: 110px;
+    margin: 20px;
+}
+
+.game-title{
+    height: 40px;
+}
+.game-description{
+    height: 160px;
+}
+.game-score{
+    height: 100px;
+}
+.game-metascore{
+    height: 100px;
+}

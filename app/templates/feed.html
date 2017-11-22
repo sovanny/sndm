@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Hunter - Games</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/feed.css">
+</head>
+
+<body>
+    <!--{% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}-->
+    <div id="feed-background">
+
+        <div class="row">
+
+            <div class="col-md-3 feed-left-col">
+                <h1>Hi, {{ steamid }}!</h1>
+<div class="user-info-container">
+        <img class="user-picture" src="static/img/{{ nameofimgvar | default('wonder-woman.png') }}"/>
+<div class="user-info-box">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+</div>
+
+</div>
+
+            </div>
+            <div class="col-md-6 feed-middle-col">{% for game in games %}
+                <div class="game-item ">
+                    <div class="game-img-container">
+                            <img class="game-img" src="static/img/{{ nameofimgvar | default('mass-effect-cover.jpg') }}"/>
+                    </div>
+                    <div class="game-info-container">
+                        <div class="game-title">
+                        <p>{{ game.gameTitle }}</p>
+                    </div>
+                    <div class="game-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    </div>
+                    </div>
+                    <div class="game-score-container">
+                        <div class="game-score">
+                            score:
+                            <br> {{ game.similarityScore }}
+                        </div>
+                        <div class="game-metascore">
+                            metascore:
+                            <br>{{game.metascore}}
+                        </div>
+                    </div>
+                    </p>
+                </div>
+                {% endfor %}</div>
+            <div class="col-md-3"></div>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
