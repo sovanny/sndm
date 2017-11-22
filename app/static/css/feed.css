@@ -1,21 +1,22 @@
 #feed-background{
     /*background-image:  url("/static/img/journey.jpg");*/
-    background-color: gray;
+    background-color: lightgrey
 }
 .feed-left-col{
-    background-color: lightgrey;
+    background-color: transparent;
 
 }
 .feed-middle-col{
-    background-color: lightslategray;
+    background-color: transparent;
     
 }
 .user-info-container{
     width: 250px;
     
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: 75px;
     display:block;
+    position: fixed;
+    
     
 }
 .user-picture{
@@ -36,6 +37,7 @@
     -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
     box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
     padding: 10px;
+    
 }
 .game-item{
     width: 650px;
