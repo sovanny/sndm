@@ -5,29 +5,56 @@
     <title>Game Hunter - Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/login.css">
 </head>
 
 <body>
-    <div class="login-container">
+    <div class="centered-div">
+        <div class="row">
+            <div class="col">
+                <div class="login-wrapper">
+                    <h1 class="login-text">Login with Steam.</h1>
+                    <div class="login-container">
 
+                        <img id="steam-img" src="/static/img/steam.jpg">
 
-        <h1>Sign In</h1>
-        <img id="steam-img" src="/static/img/steam.jpg">
+                        <div class="form-container1">
+                            <form class="form-signin" action="" method="post" name="login">
+                                {{ loginForm.hidden_tag() }} Enter your SteamID
 
-        <div class="form-container">
-        <form class="form-signin" action="" method="post" name="login">
-            {{ form.hidden_tag() }}
-            
-                Enter your SteamID:
+                                <br> {{ loginForm.steamid }}
+                                <br>
 
-                <br> {{ form.steamid }}
-                <br>
-                       
-                <input id="login-button" type="submit" value="Log In">
+                                <input id="login-button" class="submit-button" type="submit" value="Log In">
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
             </div>
-            
-        </form>
+            <div class="col">
+                <div class="login-wrapper">
+                    <h1 class="login-text">New to Steam?</h1>
+                    <div class="login-container">
+                        <div class="form-container2">
+                            <form class="form-signin" action="" method="post" name="login">
+                                {{ threeGamesForm.hidden_tag() }} Your name please
+                                <br> {{ threeGamesForm.username }}
+                                <br>
+                                <br>Enter your 3 favorite games
+                                <br> {{ threeGamesForm.game1 }}
+                                <br> {{ threeGamesForm.game2 }}
+                                <br> {{ threeGamesForm.game3 }}
+                                <br>
+                                <input id="login-button-2" class="submit-button" type="submit" value="Log In">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </body>
 

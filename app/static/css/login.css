@@ -1,18 +1,43 @@
-.login-container{
-    background-color: white;
+body{
+    background-image: url('/static/img/journey3.png');
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    
+}
+
+.centered-div{
+    width: 700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.login-wrapper{
     margin-left:auto;
     margin-right:auto;
     display:block;
+    margin-top: 100px;
+    
+}
+.login-text{
+    font-family: 'Merriweather', serif;
+    color:black;
+    /*text-shadow: -1px 0 black, 0 0.5px black, 0.5px 0 black, 0 -1px black;*/
+    font-size: 34px
+    
+}
+.login-container{
+    background-color: white;
+ 
+    
     width: 300px;
     height: 300px;
-    margin-top: 100px;
+    
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     -webkit-box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
     -moz-box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
     box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
-    font-family: 'Helvetica Neue',Helvetica,sans-serif;
+    
     padding: 15px;
 }
 
@@ -36,8 +61,47 @@
     border-radius: 3px;
     color: #8a755e;
 }
+#username{
+    width: 100%;  
+    border: 1px solid #c9c9c9;
+    background: #ffffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #8a755e;
+}
+#game1{
+    width: 100%;  
+    border: 1px solid #c9c9c9;
+    background: #ffffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #8a755e;
+    margin-bottom: 10px;
+}
+#game2{
+    width: 100%;  
+    border: 1px solid #c9c9c9;
+    background: #ffffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #8a755e;
+    margin-bottom: 10px;
+    
+}
+#game3{
+    width: 100%;  
+    border: 1px solid #c9c9c9;
+    background: #ffffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #8a755e;
+}
 
-#login-button{
+.submit-button{
     margin-top: 25px;
     
     border: 1px solid #154a73;
@@ -64,7 +128,7 @@
     float: right;
 }
 
-#login-button:hover {
+.submit-button:hover {
     border: 1px solid #165273;
     text-shadow: #0c2352 0 1px 0;
     background: #3788a1;
@@ -76,7 +140,7 @@
     background-image: -ms-linear-gradient(top, #5aa3bd 0%, #3788a1 100%);
     color: #fff;
 }
-#login-button:active {
+.submit-button:active {
     text-shadow: #0c2352 0 1px 0;
     border: 1px solid #165273;
     background: #7baad4;
@@ -89,7 +153,12 @@
     color: #fff;
 
 }
-.form-container{
+.form-container1{
     display: block;
     margin-top: 25px;
+}
+
+.form-container2{
+    display: block;
+    
 }

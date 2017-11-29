@@ -4,60 +4,102 @@ import pandas as pd
 from nltk import FreqDist
 from pandas import Series, DataFrame
 import networkx as nx
+from .igdb_functions import getGameInfo
 
 def loadMockData(steamid):
-    mockdata = [ 
-        {
-            'gameTitle': 'The Elder Scrolls V Skyrim',
-            'similarityScore': 53.502989714865578,
-            'metascore': '97'
-        },
-        {
-            'gameTitle': 'Fallout New Vegas',
-            'similarityScore':  36.277176853396433,
-            'metascore': '97'
-        },
-        {
-            'gameTitle': 'Left 4 Dead 2',
-            'similarityScore': 32.757423768662711,
-            'metascore': 'N/A'
-        },
-        {
-            'gameTitle': 'Team Fortress 2',
-            'similarityScore': 29.213237962323173,
-            'metascore': '97'
-        },
-        {
-            'gameTitle': 'Fallout 4',
-            'similarityScore': 16.145297797440694,
-            'metascore': '97'
-        },
-        {
-            'gameTitle': 'Spore',
-            'similarityScore': 7.9382914544637844,
-            'metascore': 'N/A'
-        },
-        {
-            'gameTitle': 'POSTAL 2',
-            'similarityScore': 7.1796941580365861,
-            'metascore': '97'
-        },
-        {
-            'gameTitle': 'Borderlands 2',
-            'similarityScore': 6.8079846548986964,
-            'metascore': '97'
-        },
-        {
-            'gameTitle': 'Wargame European Escalation',
-            'similarityScore': 4.7935830585677648,
-            'metascore': '97'
-        },
-        {
-            'gameTitle': 'Tomb Raider',
-            'similarityScore': 4.437999873445559,
-            'metascore': '97'
-        }
-    ]
+    mockdata = []
+
+    game = getGameInfo('The Elder Scrolls V Skyrim')
+    
+    mockdata.append({
+        'gameTitle': game['title'],        
+        'summary': game['summary'],
+        'rating': game['rating'],
+        'cover': game['cover'],
+        'similarityScore': 54
+    })
+
+    game = getGameInfo('Fallout New Vegas')
+    mockdata.append({
+        'gameTitle': game['title'],        
+        'summary': game['summary'],
+        'rating': game['rating'],
+        'cover': game['cover'],
+        'similarityScore':  36
+    })
+
+    game = getGameInfo('Left 4 Dead 2')
+    mockdata.append({
+        'gameTitle': game['title'],        
+        'summary': game['summary'],
+        'rating': game['rating'],
+        'cover': game['cover'],
+        'similarityScore': 33
+    })
+
+    game = getGameInfo('Team Fortress 2')
+    mockdata.append({
+        'gameTitle': game['title'],        
+        'summary': game['summary'],
+        'rating': game['rating'],
+        'cover': game['cover'],
+        'similarityScore': 29
+    })
+
+    game = getGameInfo('Fallout 4')
+    mockdata.append({
+        'gameTitle': game['title'],        
+        'summary': game['summary'],
+        'rating': game['rating'],
+        'cover': game['cover'],
+        'similarityScore': 16
+    })
+
+    game = getGameInfo('Spore')
+    mockdata.append({
+        'gameTitle': game['title'],        
+        'summary': game['summary'],
+        'rating': game['rating'],
+        'cover': game['cover'],
+        'similarityScore': 8
+    })
+    
+    game = getGameInfo('POSTAL 2')
+    mockdata.append({
+        'gameTitle': game['title'],        
+        'summary': game['summary'],
+        'rating': game['rating'],
+        'cover': game['cover'],
+        'similarityScore': 7
+    })
+
+    game = getGameInfo('Borderlands 2')
+    mockdata.append({
+        'gameTitle': game['title'],        
+        'summary': game['summary'],
+        'rating': game['rating'],
+        'cover': game['cover'],
+        'similarityScore': 7
+    })
+
+    game = getGameInfo('Wargame European Escalation')
+    mockdata.append({
+        'gameTitle': game['title'],        
+        'summary': game['summary'],
+        'rating': game['rating'],
+        'cover': game['cover'],
+        'similarityScore': 5
+    })
+
+    game = getGameInfo('Tomb Raider')
+    mockdata.append({
+        'gameTitle': game['title'],        
+        'summary': game['summary'],
+        'rating': game['rating'],
+        'cover': game['cover'],
+        'similarityScore': 4
+    })
+    
     return mockdata
 
 

@@ -1,5 +1,8 @@
 #feed-background{
-    /*background-image:  url("/static/img/journey.jpg");*/
+    background-image:  url("/static/img/journey3.png");
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-attachment: fixed;
     background-color: lightgrey
 }
 .feed-left-col{
@@ -71,6 +74,7 @@
     display: block;
     float: left;
     width: 100px;
+    text-align: center;
 }
 
 .game-img{
@@ -80,13 +84,30 @@
 
 .game-title{
     height: 40px;
+    font-size: large;
 }
 .game-description{
     height: 160px;
+    font-size: medium;
+    line-height: 120%;
+    margin-right: 20px;
 }
 .game-score{
-    height: 100px;
+    
+    height: 76px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin: 10px;
+  
 }
 .game-metascore{
-    height: 100px;
+    height: 76px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin: 10px; 
+   
+}
+.rating{
+    font-size: large;
+    font-weight: bolder;
 }

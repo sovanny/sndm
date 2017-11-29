@@ -22,11 +22,16 @@
         <div class="row">
 
             <div class="col-md-3 feed-left-col">
-                <h1>Hi, {{ steamid }}!</h1>
+                
 <div class="user-info-container">
         <img class="user-picture" src="static/img/{{ nameofimgvar | default('wonder-woman.png') }}"/>
 <div class="user-info-box">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+       <h2>Hello, {{steamid}}!</h2>
+       <p>Played games:</p>
+       <p>game1</p>
+       <p>game2</p>
+       <p>game3</p>
+       
 </div>
 
 </div>
@@ -35,24 +40,24 @@
             <div class="col-md-6 feed-middle-col">{% for game in games %}
                 <div class="game-item ">
                     <div class="game-img-container">
-                            <img class="game-img" src="static/img/{{ nameofimgvar | default('mass-effect-cover.jpg') }}"/>
+                            <img class="game-img" src="{{game.cover}}"/>
                     </div>
                     <div class="game-info-container">
                         <div class="game-title">
                         <p>{{ game.gameTitle }}</p>
                     </div>
                     <div class="game-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                            {{ game.summary }}
                     </div>
                     </div>
                     <div class="game-score-container">
                         <div class="game-score">
-                            score:
-                            <br> {{ game.similarityScore }}
+                            Similarity score:
+                            <br> <div class="rating">{{ game.similarityScore }}%</div>
                         </div>
                         <div class="game-metascore">
-                            metascore:
-                            <br>{{game.metascore}}
+                            Rating:
+                            <br><div class="rating">{{game.rating}}</div>
                         </div>
                     </div>
                     </p>
