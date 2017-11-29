@@ -12,6 +12,9 @@ def login():
     if loginForm.validate_on_submit():
         session['session_steamid'] = loginForm.steamid.data
         #flash('Login requested for SteamID="%s"' % loginForm.steamid.data)
+        session['game1'] = "DARK SOULS III"
+        session['game2'] = "Mount & Blade: Warband"
+        session['game3'] = "Sid Meier's Civilization V"
         return redirect('/feed')
     if threeGamesForm.validate_on_submit():
         session['session_steamid'] = threeGamesForm.username.data
@@ -32,15 +35,12 @@ def feed():
     games = loadMockData(steamid)
     #games = mainCF(151603712)[:10]
     #games = tupleToDict(games)
-    if session.get('game1', None):
-        game1 = session.get('game1', None)
-        game2 = session.get('game2', None)
-        game3 = session.get('game3', None)
-        playedGames = [game1, game2, game3]    
-    else:
-        playedGames = ["DARK SOULS III", "Mount & Blade: Warband", "Sid Meier's Civilization V"]
 
-        
+    game1 = session.get('game1', None)
+    game2 = session.get('game2', None)
+    game3 = session.get('game3', None)
+    playedGames = [game1, game2, game3]    
+            
     return render_template("feed.html",
                            steamid=steamid,
                            games=games,

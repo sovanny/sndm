@@ -6,6 +6,7 @@
     <title>Game Hunter - Games</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/feed.css">
 </head>
 
@@ -22,42 +23,46 @@
         <div class="row">
 
             <div class="col-md-3 feed-left-col">
-                
-<div class="user-info-container">
-        <img class="user-picture" src="static/img/{{ nameofimgvar | default('wonder-woman.png') }}"/>
-<div class="user-info-box">
-       <h2>Hello, {{steamid}}!</h2>
-       <p>Played games:</p>
-       <p>game1</p>
-       <p>game2</p>
-       <p>game3</p>
-       
-</div>
 
-</div>
+                <div class="user-info-container">
+                    <img class="user-picture" src="static/img/{{ nameofimgvar | default('wonder-woman.png') }}" />
+                    <div class="user-info-box">
+                        <h2>Hello, {{steamid}}!</h2>
+                        <p>Played games:</p>
+                        <p>{{playedGames[0]}}</p>
+                        <p>{{playedGames[1]}}</p>
+                        <p>{{playedGames[2]}}</p>
+
+                    </div>
+
+                </div>
 
             </div>
-            <div class="col-md-6 feed-middle-col">{% for game in games %}
+            <div class="col-md-6 feed-middle-col">
+                <h1 class="recommended-title">Recommended games: </h1>
+                {% for game in games %}
                 <div class="game-item ">
                     <div class="game-img-container">
-                            <img class="game-img" src="{{game.cover}}"/>
+                        <img class="game-img" src="{{game.cover}}" />
                     </div>
                     <div class="game-info-container">
                         <div class="game-title">
-                        <p>{{ game.gameTitle }}</p>
-                    </div>
-                    <div class="game-description">
+                            <p>{{ game.gameTitle }}</p>
+                        </div>
+                        <div class="game-description">
                             {{ game.summary }}
-                    </div>
+                        </div>
                     </div>
                     <div class="game-score-container">
                         <div class="game-score">
                             Similarity score:
-                            <br> <div class="rating">{{ game.similarityScore }}%</div>
+                            <br>
+                            <div class="rating">{{ game.similarityScore }}%</div>
                         </div>
                         <div class="game-metascore">
-                            Rating:
-                            <br><div class="rating">{{game.rating}}</div>
+                            IGDB Rating:
+                            <br>
+                            <div class="rating">{{game.rating}}</div>
                         </div>
                     </div>
                     </p>

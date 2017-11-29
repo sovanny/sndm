@@ -15,12 +15,9 @@
 }
 .user-info-container{
     width: 250px;
-    
-    margin-left: 75px;
+    margin: 75px;   
     display:block;
-    position: fixed;
-    
-    
+    position: fixed;   
 }
 .user-picture{
     width: 100px;
@@ -39,8 +36,21 @@
     -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
     box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
-    padding: 10px;
-    
+    padding: 10px;  
+}
+
+.user-info-box h2{
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+.recommended-title{
+    width: 650px;
+    font-family: 'Merriweather', serif;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    display: block;
 }
 .game-item{
     width: 650px;
@@ -83,29 +93,32 @@
 }
 
 .game-title{
+    margin-top: 10px;
     height: 40px;
     font-size: large;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
 }
 .game-description{
     height: 160px;
-    font-size: medium;
-    line-height: 120%;
+    font-size: small;
+    line-height: 160%;
     margin-right: 20px;
+    font-weight: 400;
 }
 .game-score{
-    
     height: 76px;
     border-radius: 10px;
     border: 1px solid gray;
     margin: 10px;
-  
+    line-height: 100%;
 }
 .game-metascore{
     height: 76px;
     border-radius: 10px;
     border: 1px solid gray;
     margin: 10px; 
-   
+    line-height: 100%;   
 }
 .rating{
     font-size: large;
