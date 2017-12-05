@@ -27,10 +27,10 @@
                 <div class="logo">Game Hunter</div>
 
                 <div class="user-info-container">
-                    <img class="user-picture" src="static/img/{{ nameofimgvar | default('wonder-woman.png') }}" />
+                    <img class="user-picture" src="static/img/{{ profilePic | default('wonder-woman.png') }}" />
                     <div class="user-info-box">
-                        <h2>Hello, {{steamid}}!</h2>
-                        <p>Played games:</p>
+                        <h2>Hello, <br>{{steamid}}!</h2>
+                        <p>Games you played:</p>
                         <p>{{playedGames[0]}}</p>
                         <p>{{playedGames[1]}}</p>
                         <p>{{playedGames[2]}}</p>
