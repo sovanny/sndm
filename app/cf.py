@@ -16,7 +16,8 @@ def loadMockData(steamid):
         'summary': game['summary'],
         'rating': game['rating'],
         'cover': game['cover'],
-        'similarityScore': 54
+        'similarityScore': 54,
+        'igdbUrl': game['url']
     })
 
     game = getGameInfo('Fallout New Vegas')
@@ -25,7 +26,8 @@ def loadMockData(steamid):
         'summary': game['summary'],
         'rating': game['rating'],
         'cover': game['cover'],
-        'similarityScore':  36
+        'similarityScore':  36,
+        'igdbUrl': game['url']
     })
 
     game = getGameInfo('Left 4 Dead 2')
@@ -34,7 +36,8 @@ def loadMockData(steamid):
         'summary': game['summary'],
         'rating': game['rating'],
         'cover': game['cover'],
-        'similarityScore': 33
+        'similarityScore': 33,
+        'igdbUrl': game['url']
     })
 
     game = getGameInfo('Team Fortress 2')
@@ -43,7 +46,8 @@ def loadMockData(steamid):
         'summary': game['summary'],
         'rating': game['rating'],
         'cover': game['cover'],
-        'similarityScore': 29
+        'similarityScore': 29,
+        'igdbUrl': game['url']
     })
 
     game = getGameInfo('Fallout 4')
@@ -52,7 +56,8 @@ def loadMockData(steamid):
         'summary': game['summary'],
         'rating': game['rating'],
         'cover': game['cover'],
-        'similarityScore': 16
+        'similarityScore': 16,
+        'igdbUrl': game['url']
     })
 
     game = getGameInfo('Spore')
@@ -61,7 +66,8 @@ def loadMockData(steamid):
         'summary': game['summary'],
         'rating': game['rating'],
         'cover': game['cover'],
-        'similarityScore': 8
+        'similarityScore': 8,
+        'igdbUrl': game['url']
     })
     
     game = getGameInfo('POSTAL 2')
@@ -70,7 +76,8 @@ def loadMockData(steamid):
         'summary': game['summary'],
         'rating': game['rating'],
         'cover': game['cover'],
-        'similarityScore': 7
+        'similarityScore': 7,
+        'igdbUrl': game['url']
     })
 
     game = getGameInfo('Borderlands 2')
@@ -79,7 +86,8 @@ def loadMockData(steamid):
         'summary': game['summary'],
         'rating': game['rating'],
         'cover': game['cover'],
-        'similarityScore': 7
+        'similarityScore': 7,
+        'igdbUrl': game['url']
     })
 
     game = getGameInfo('Wargame European Escalation')
@@ -88,7 +96,8 @@ def loadMockData(steamid):
         'summary': game['summary'],
         'rating': game['rating'],
         'cover': game['cover'],
-        'similarityScore': 5
+        'similarityScore': 5,
+        'igdbUrl': game['url']
     })
 
     game = getGameInfo('Tomb Raider')
@@ -97,7 +106,8 @@ def loadMockData(steamid):
         'summary': game['summary'],
         'rating': game['rating'],
         'cover': game['cover'],
-        'similarityScore': 4
+        'similarityScore': 4,
+        'igdbUrl': game['url']
     })
     
     return mockdata

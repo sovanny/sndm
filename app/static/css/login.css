@@ -5,6 +5,16 @@ body{
     
 }
 
+.logo{
+    font-family: 'Jockey One', sans-serif;
+    font-size: 4rem;
+    display: block;
+    float: left;
+    margin-left: 5vw;
+    
+}
+
+
 .centered-div{
     width: 700px;
     margin-left:auto;

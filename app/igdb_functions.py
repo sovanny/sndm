@@ -9,9 +9,10 @@ def getGameInfo(gameTitle):
 
     result = igdb.games({
         'search': gameTitle,
-        'fields' : ['name', 'summary', 'total_rating', 'cover'] 
+        'fields' : ['name', 'summary', 'total_rating', 'cover', 'url'] 
     })
     gameInfo['title'] = result.body[0]['name']
+    gameInfo['url'] =  result.body[0]['url']
 
     if 'summary' in result.body[0]:
         gameInfo['summary'] = result.body[0]['summary'][:320]
