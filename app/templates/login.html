@@ -3,6 +3,11 @@
 
 <head>
     <title>Game Hunter - Login</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/js/selectize.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/selectize.css" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
@@ -11,6 +16,7 @@
 </head>
 
 <body>
+
     <div class="logo">Game Hunter</div>
     <div class="centered-div">
 
@@ -39,7 +45,7 @@
             <div class="col">
                 <div class="login-wrapper">
                     <h1 class="login-text">New to Steam?</h1>
-                    <div class="login-container">
+                    <div class="login-container2">
                         <div class="form-container2">
                             <form class="form-signin" action="" method="post" name="login">
                                 {{ threeGamesForm.hidden_tag() }} Your name please
@@ -59,6 +65,44 @@
             </div>
         </div>
     </div>
+    <script>
+
+        optionList = []
+        for (g in {{ gameListFiltered | safe }}){
+            optionList.push({ 'value': {{gameListFiltered | safe}}[g] })
+        }
+        
+        $('#game1').selectize({
+            options: optionList,
+            labelField: 'value',
+            valueField: 'value',
+            searchField: 'value',
+            create: false,
+            sortField: 'text',
+            maxItems: 1,
+            closeAfterSelect: true
+        });
+        $('#game2').selectize({
+            options: optionList,
+            labelField: 'value',
+            valueField: 'value',
+            searchField: 'value',
+            create: false,
+            sortField: 'text',
+            maxItems: 1,
+            closeAfterSelect: true
+        });
+        $('#game3').selectize({
+            options: optionList,
+            labelField: 'value',
+            valueField: 'value',
+            searchField: 'value',
+            create: false,
+            sortField: 'text',
+            maxItems: 1,
+            closeAfterSelect: true
+        });
+    </script>
 </body>
 
 </html>

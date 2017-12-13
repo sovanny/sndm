@@ -1,8 +1,10 @@
 from flask import render_template, flash, redirect, session
 from app import app
 from .forms import LoginForm, ThreeGamesForm
-from .cf import loadMockData, loadMockData2 #, mainCF
-from .dataformatter import tupleToDict
+from .cf import mainCF
+from .mockData import loadMockData, loadMockData2
+from .pagerank import main_PR_category, gameListFiltered
+from .dataformatter import tupleToDict, getGameInfoList
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
@@ -25,10 +27,13 @@ def login():
         session['game3'] = threeGamesForm.game3.data
         session['loginType'] = 2       
         return redirect('/feed')      
+
+    
         
     return render_template('login.html', 
-                           loginForm=loginForm,
-                           threeGamesForm = threeGamesForm)
+                            gameListFiltered = gameListFiltered,
+                            loginForm=loginForm,
+                            threeGamesForm = threeGamesForm)
 
 @app.route('/feed')
 def feed():
@@ -51,7 +56,11 @@ def feed():
         game3 = session.get('game3', None)
         playedGames = [game1, game2, game3]    
         # should not be loadMockData in real app
-        games = loadMockData2(playedGames)
+        #ames = loadMockData2(playedGames)
+        resultingGames = main_PR_category(game1, game2, game3)
+        games = getGameInfoList(resultingGames)
+        
+
         profilePic = 'wonder-woman.png'
 
             
