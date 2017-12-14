@@ -66,6 +66,23 @@
         </div>
     </div>
     <script>
+        
+        optionList2 = [];
+        for (g in {{ gamerList|safe }}){
+            optionList2.push({ 'value': {{ gamerList|safe }}[g] })
+        }
+        
+        $('#steamid').selectize({
+            options: optionList2,
+            labelField: 'value',
+            valueField: 'value',
+            searchField: 'value',
+            create: false,
+            sortField: 'text',
+            maxItems: 1,
+            closeAfterSelect: true
+        });
+
 
         optionList = []
         for (g in {{ gameListFiltered | safe }}){

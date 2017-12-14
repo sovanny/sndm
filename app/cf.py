@@ -13,25 +13,36 @@ df = pd.read_csv('./app/static/data/steam-200k.csv')
 #select played games
 edgelist = [[Userid,gameTitle,10*(1+playTime**(-2))**(-4.0)] for Userid,gameTitle,p,playTime,e in df.values if p =="play"]
 
+    
+
 gamerList = []
 gameList = []
 for i in edgelist:
     gamerList.append(i[0])
     gameList.append(i[1])
+
+gamerList2 = [float(x) for x in gamerList]
+
+
 AllgameList = set(gameList)
 gamerList = set(gamerList)
-#print '# of gamer in csv is ', len(gamerList)
-#print '# of game in csv is ',len(AllgameList)
 
 G = nx.Graph()
 G.add_weighted_edges_from(edgelist)
 df = nx.to_pandas_dataframe(G)
 GG_matrix = DataFrame(df, columns = AllgameList, index = gamerList)
 
-
-def mainCF(steamid): 
-    similaruser = find_10similarUsers(steamid)
-    return expectedScoreToGame(similaruser)
+def main_CF(Userid):
+    similaruser = find_10similarUsers(Userid)
+    
+    a = []
+    for i,j in  expectedScoreToGame(similaruser):
+        if i not in G[Userid].keys():
+            a.append([i,j])
+        else:
+            print i, 'is already played'
+    
+    return a[:10]
     
 def expectedScoreToGame(similarUsers):
     a = []
@@ -49,7 +60,6 @@ def expectedScoreToGame(similarUsers):
         expectedScore.update(x)
     expectedScoreForSorting = dict(expectedScore).items()  
     expectedScoreForSorting.sort( key=lambda x: x[1] , reverse=True )
-
     return expectedScoreForSorting
         
 def find_10similarUsers(a):
@@ -71,5 +81,3 @@ def cos_sim(a, b):
     from numpy.linalg import norm
     cos_sim = dot(a, b)/(norm(a)*norm(b))
     return cos_sim
-
-

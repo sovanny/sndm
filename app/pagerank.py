@@ -4,9 +4,6 @@ import networkx as nx
 from operator import itemgetter
 import pandas as pd 
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
 df = pd.read_csv('./app/static/data/game_category.csv')
 df2 = pd.read_csv('./app/static/data/game_keyword.csv')
 
@@ -117,7 +114,7 @@ def main_PR(game1,game2,game3):
         result.append([p, round(pow(10,6)*dp[p])])
     maxvalue =  max(result,key=lambda item:item[1])[1]
     for i in range(10):
-        result[i][1] = result[i][1] / maxvalue
+        result[i][1] = round((result[i][1] / maxvalue)*100)
     print("main_PR done")
     return result
 
