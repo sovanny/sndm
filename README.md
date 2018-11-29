@@ -8,4 +8,4 @@ Techniques such as collaborative filtering and TF-IDF are used to find games. [c
 
 App built using python flask
 
-[screenshot]: ./game_hunter.png "Screenshot"
+![screenshot](./game_hunter.png "Screenshot")
